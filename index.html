@@ -1,1 +1,243 @@
-Love you sophie <3
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<style>
+body{
+    background-color: #D4C284;
+    font-family: 'Montserrat', sans-serif;
+}
+#everything{
+
+  position: relative;
+}
+
+
+#name{
+  text-align: center;
+
+  font-size: 40;
+}
+audio {
+    background-color: #0B4354;
+    margin-left: -15px;
+
+}
+a{
+  color:#546E7A;
+}
+#link{
+  word-break: break-all;
+
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: #43A047;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+.form .register-form {
+  display: none;
+}
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.container:before, .container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.container .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.container .info span .fa {
+  color: #EF3B3A;
+}
+body {
+  background: #76b852; /* fallback for old browsers */
+  background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+  background: -moz-linear-gradient(right, #76b852, #8DC26F);
+  background: -o-linear-gradient(right, #76b852, #8DC26F);
+  background: linear-gradient(to left, #76b852, #8DC26F);
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+</style>
+</head>
+<div id="everything">
+  <div id="container">
+    <div class="login-page">
+  <div class="form">
+
+    <p style="margin-top:0px"><b>TUNATUNA</b></p>
+    <details>
+  <summary>How do i use this?</summary>
+    <hr>
+    Upload your song and get a direct link
+    <a href="https://mixtape.moe/" target="_blank">mixtape.moe</a>  <a href="https://doko.moe/" target="_blank">doko.moe</a>
+    <hr>
+    Paste your the link in 'direct link' and fill out other details
+    <hr>
+    Click "CREATE PAGE".
+  </details>
+  <br>
+    <div class="login-form">
+      <input type="text" id="f_name" placeholder="Song name"/>
+      <input type="text" id="f_artist" placeholder="Artist name"/>
+      <input type="text" id="f_link" placeholder="Direct link"/>
+        <input type="text" id="f_desc" placeholder="Description"/>
+      <button onclick="createpage()" >Create page</button>
+      <p id="link">link will appear here</p>
+
+      <p id="shortened"></p>
+
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>
+
+
+<script>
+function createpage(){
+  var name = encodeURIComponent($('#f_name').val())
+  var link = $('#f_link').val()
+  var artist = $('#f_artist').val()
+  var desc = encodeURIComponent($('#f_desc').val())
+  var url = window.location.hostname + "?n=" + name + "&a=" + artist + "&s=" + link + "&d=" + desc
+
+//  $("#link").replaceWith("<p><a href='" + url + "'>" + url + "</a></p>")
+  shorten_url(url)
+
+
+}
+function GetURLParameter(sParam){
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++)
+    {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam)
+        {
+            return sParameterName[1];
+        }
+    }
+}
+
+var name = decodeURIComponent(GetURLParameter('n')).replace(/\+/g, ' ');
+var desc = decodeURI(GetURLParameter('d')).replace(/\+/g, ' ');
+var song = decodeURI(GetURLParameter('s'))
+var artist = decodeURI(GetURLParameter('a'))
+console.log(song  + ' ' + song.length)
+
+if (song.length > 3 & song != 'undefined'){
+  console.log(song  + ' ' + song.length)
+  load_song()
+}
+
+function load_song(){
+  $("#everything").replaceWith( "    <div class='login-page'><div class='form'><div id='container'> <p id='name'> " + name + " </p><p id='artist'> " + artist + " </p><audio controls id='player'> <source src=" +
+  song + " type='audio/ogg'><source src=" + song +
+   " type='audio/mpeg'>Your browser does not support the audio element.</audio> <p id='desc'> " + desc + " </p><div id='info'>info</div> </div>");
+   $.ajax({
+         url: 'https://www.googleapis.com/urlshortener/v1/url?key=AIzaSyCSpwlB4_F2KGPoss1INntqTLDykfprzo4',
+         type: 'POST',
+         contentType: 'application/json; charset=utf-8',
+         data: '{ longUrl: "' + window.location.href +'"}',
+         success: function(response) {
+             console.log("this pages goo.gl: " + response.id)
+
+             $("#info").replaceWith("<p><a href='" + response.id + "'></p>" + response.id + "</a><p><a href='" + response.id + ".info'>Analytics</a></p>")
+
+         }
+      });
+
+}
+
+function shorten_url(url){
+  console.log("attempting to shorten " + url)
+  $.ajax({
+        url: 'https://www.googleapis.com/urlshortener/v1/url?key=AIzaSyCSpwlB4_F2KGPoss1INntqTLDykfprzo4',
+        type: 'POST',
+        contentType: 'application/json; charset=utf-8',
+        data: '{ longUrl: "' + url +'"}',
+        success: function(response) {
+            $('#link').replaceWith("<p>" + "<a href='" + response.id + "'>" + response.id + " </a></p>");
+            console.log(response.id)
+        }
+     });
+}
+//output: Gold%20Coast
+
+console.log(GetURLParameter('n'));
+//output: Gold Coast
+</script>
