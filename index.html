@@ -216,7 +216,7 @@ function load_song(){
          success: function(response) {
              console.log("this pages goo.gl: " + response.id)
 
-             $("#info").replaceWith("<p><a href='" + response.id + "'></p>" + response.id + "</a><p><a href='" + response.id + ".info'>Analytics</a></p>")
+             $("#info").replaceWith("<p><a href='" + response.id + "'></p>" + response.id + "</a><p><a href='" + response.id + ".info' target='_blank'>Analytics</a></p>")
 
          }
       });
