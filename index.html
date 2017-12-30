@@ -252,7 +252,7 @@ if (song.length > 3 & song != 'undefined'){
 }
 
 function googlTo(long){
-  long = long.replace('https://goo.gl','')
+  long = long.replace('https://goo.gl/','')
   long = long.replace('.','')
   long = long.replace('/','')
   console.log("short: " + long)
@@ -260,7 +260,7 @@ function googlTo(long){
 }
 
 function googlFrom(short){
-  short = 'https://goo.gl' + short
+  short = 'https://goo.gl/' + short
 
   console.log("long: " + short)
   return short
