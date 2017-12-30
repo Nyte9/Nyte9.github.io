@@ -248,7 +248,8 @@ function shorten_url(url){
 }
 
 function copy_link(){
-  copyToClipboard('#share').val()
+  copyToClipboard($('#share').val())\
+
 }
 function copyToClipboard(text) {
 
@@ -262,7 +263,9 @@ function copyToClipboard(text) {
       var successful = document.execCommand( 'copy' );
       var msg = successful ? 'successful' : 'unsuccessful';
       console.log('Copying text command was ' + msg);
+      $( '#share' ).text( 'LINK COPIED' );
    } catch (err) {
+     $( '#share' ).text( 'ERROR' );
       console.log('Oops, unable to copy');
    }
 
