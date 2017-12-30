@@ -278,6 +278,7 @@ function shorten_url(url){
         data: '{ longUrl: "' + url +'"}',
         success: function(response) {
             $('#link').replaceWith("<p>" + "<a href='"+ window.location.hostname + '?u=' + response.id + "'>" + window.location.hostname + '?u=' + response.id + " </a></p>");
+console.log("<p>" + "<a href='"+ window.location.hostname + '?u=' + response.id + "'>" + window.location.hostname + '?u=' + response.id + " </a></p>")
             console.log( window.location.hostname + '?u=' + response.id)
         }
      });
