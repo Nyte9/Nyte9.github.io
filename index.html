@@ -219,6 +219,7 @@ function GetURLParameter(sParam){
 }
 
 function redirect_to(url){
+
   window.location.replace(googlFrom(url))
 }
 var redirect = decodeURI(GetURLParameter('u'))
@@ -251,7 +252,7 @@ if (song.length > 3 & song != 'undefined'){
 }
 
 function googlTo(long){
-  long = long.replace('https://','')
+  long = long.replace('https://goo.gl','')
   long = long.replace('.','')
   long = long.replace('/','')
   console.log("short: " + long)
@@ -259,9 +260,9 @@ function googlTo(long){
 }
 
 function googlFrom(short){
-  short = 'https://' + short
-  short = short.substr(3, position) + "." + short.substr(position)
-  short = short.substr(5, position) + "/" + short.substr(position)
+  short = 'https://goo.gl' + short
+
+  console.log("long: " + short)
   return short
 }
 
