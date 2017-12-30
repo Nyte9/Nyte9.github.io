@@ -283,7 +283,7 @@ function load_song(){
          success: function(response) {
              console.log("this pages goo.gl: " + response.id)
              var myURL = window.location.hostname + '?u=' + googlTo(response.id)
-             $("#info").replaceWith("<p><input type = 'text' id='share' value='" + myURL + "' readonly><br><button id='copy' onclick='copy_link()'>Copy Link</button><p><a href='" + response.id + ".info' target='_blank'>Analytics</a></p>")
+             $("#info").replaceWith("<p><input type = 'text' id='share' value='http://" + myURL + "' readonly><br><button id='copy' onclick='copy_link()'>Copy Link</button><p><a href='" + response.id + ".info' target='_blank'>Analytics</a></p>")
 
          }
       });
