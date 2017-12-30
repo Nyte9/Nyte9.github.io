@@ -277,7 +277,7 @@ function shorten_url(url){
         contentType: 'application/json; charset=utf-8',
         data: '{ longUrl: "' + url +'"}',
         success: function(response) {
-            $('#link').replaceWith("<p>" + "<a href='" + window.location.hostname + '?u=' + response.id + "'>" + response.id + " </a></p>");
+            $('#link').replaceWith("<p>" + "<a href='" + window.location.hostname + '?u=' + response.id + "'>" + window.location.hostname + '?u=' + response.id + " </a></p>");
             console.log( window.location.hostname + '?u=' + response.id)
         }
      });
