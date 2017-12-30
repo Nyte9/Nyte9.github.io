@@ -1,5 +1,6 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 <style>
 body{
@@ -139,21 +140,25 @@ body {
 
     <p style="margin-top:0px"><b>TUNATUNA</b></p>
     <details>
-  <summary>How do i use this?</summary>
+  <summary>How do I use this?</summary>
     <hr>
     Upload your song and get a direct link
     <a href="https://mixtape.moe/" target="_blank">mixtape.moe</a>  <a href="https://doko.moe/" target="_blank">doko.moe</a>
     <hr>
-    Paste your the link in 'direct link' and fill out other details
+    Paste the link in 'direct link' and fill out other details
     <hr>
     Click "CREATE PAGE".
   </details>
   <br>
     <div class="login-form">
+      <input type="text" id="f_link" placeholder="Direct link"/>
+      <details><summary>Extra's</summary><br>
       <input type="text" id="f_name" placeholder="Song name"/>
       <input type="text" id="f_artist" placeholder="Artist name"/>
-      <input type="text" id="f_link" placeholder="Direct link"/>
         <input type="text" id="f_desc" placeholder="Description"/>
+        <input type="text" id="f_sc" placeholder="Link (eg. your soundcloud)"/>
+      </details>
+      <br>
       <button onclick="createpage()" >Create page</button>
       <p id="link">link will appear here</p>
 
@@ -172,8 +177,9 @@ function createpage(){
   var name = encodeURIComponent($('#f_name').val())
   var link = $('#f_link').val()
   var artist = $('#f_artist').val()
+  var sc = $('#f_sc').val()
   var desc = encodeURIComponent($('#f_desc').val())
-  var url = window.location.hostname + "?n=" + name + "&a=" + artist + "&s=" + link + "&d=" + desc
+  var url = window.location.hostname + "?n=" + name + "&a=" + artist + "&s=" + link + "&l=" + sc + "&d=" + desc
 
 //  $("#link").replaceWith("<p><a href='" + url + "'>" + url + "</a></p>")
   shorten_url(url)
@@ -197,6 +203,7 @@ var name = decodeURIComponent(GetURLParameter('n')).replace(/\+/g, ' ');
 var desc = decodeURI(GetURLParameter('d')).replace(/\+/g, ' ');
 var song = decodeURI(GetURLParameter('s'))
 var artist = decodeURI(GetURLParameter('a'))
+var sc = decodeURI(GetURLParameter('l'))
 console.log(song  + ' ' + song.length)
 
 if (song.length > 3 & song != 'undefined'){
@@ -205,9 +212,12 @@ if (song.length > 3 & song != 'undefined'){
 }
 
 function load_song(){
+  if(sc == 'undefined'){
+    sc = ''
+  }
   $("#everything").replaceWith( "    <div class='login-page'><div class='form'><div id='container'> <p id='name'> " + name + " </p><p id='artist'> " + artist + " </p><audio controls id='player'> <source src=" +
   song + " type='audio/ogg'><source src=" + song +
-   " type='audio/mpeg'>Your browser does not support the audio element.</audio> <p id='desc'> " + desc + " </p><div id='info'>info</div> </div>");
+   " type='audio/mpeg'>Your browser does not support the audio element.</audio> <p id='desc'> " + desc + " </p><a href='" + sc + "' target='_blank' ><br> " + sc + " </a><div id='info'>info</div> </div>");
    $.ajax({
          url: 'https://www.googleapis.com/urlshortener/v1/url?key=AIzaSyCSpwlB4_F2KGPoss1INntqTLDykfprzo4',
          type: 'POST',
@@ -216,7 +226,7 @@ function load_song(){
          success: function(response) {
              console.log("this pages goo.gl: " + response.id)
 
-             $("#info").replaceWith("<p><a href='" + response.id + "'></p>" + response.id + "</a><p><a href='" + response.id + ".info' target='_blank'>Analytics</a></p>")
+             $("#info").replaceWith("<p><input type = 'text' id='share' value='" + response.id + "/>'<p><a href='" + response.id + ".info' target='_blank'>Analytics</a></p>")
 
          }
       });
