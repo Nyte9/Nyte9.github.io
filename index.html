@@ -216,11 +216,30 @@ function GetURLParameter(sParam){
     }
 }
 
+function redirect_to(url){
+  window.location.replace(url)
+}
+var redirect = decodeURI(GetURLParameter('u'))
+
+if (redirect.length > 3 & redirect != 'undefined'){
+  redirect_to(redirect)
+}
+
 var name = decodeURIComponent(GetURLParameter('n')).replace(/\+/g, ' ');
 var desc = decodeURI(GetURLParameter('d')).replace(/\+/g, ' ');
 var song = decodeURI(GetURLParameter('s'))
 var artist = decodeURI(GetURLParameter('a'))
 var sc = decodeURI(GetURLParameter('l'))
+name = name.replace(/</g," ");
+name = name.replace(/>/g," ");
+desc = desc.replace(/</g," ");
+desc = desc.replace(/>/g," ");
+song = song.replace(/</g," ");
+song = song.replace(/>/g," ");
+artist = artist.replace(/</g," ");
+artist = artist.replace(/>/g," ");
+sc = sc.replace(/</g," ");
+sc = sc.replace(/>/g," ");
 console.log(song  + ' ' + song.length)
 
 if (song.length > 3 & song != 'undefined'){
@@ -243,7 +262,7 @@ function load_song(){
          success: function(response) {
              console.log("this pages goo.gl: " + response.id)
 
-             $("#info").replaceWith("<p><input type = 'text' id='share' value='" + response.id + "' readonly><br><button id='copy' onclick='copy_link()'>Copy Link</button><p><a href='" + response.id + ".info' target='_blank'>Analytics</a></p>")
+             $("#info").replaceWith("<p><input type = 'text' id='share' value='" + window.location.hostname + '?u=' + response.id + "' readonly><br><button id='copy' onclick='copy_link()'>Copy Link</button><p><a href='" + response.id + ".info' target='_blank'>Analytics</a></p>")
 
          }
       });
@@ -258,8 +277,8 @@ function shorten_url(url){
         contentType: 'application/json; charset=utf-8',
         data: '{ longUrl: "' + url +'"}',
         success: function(response) {
-            $('#link').replaceWith("<p>" + "<a href='" + response.id + "'>" + response.id + " </a></p>");
-            console.log(response.id)
+            $('#link').replaceWith("<p>" + "<a href='" + window.location.hostname + '?u=' + response.id + "'>" + response.id + " </a></p>");
+            console.log( window.location.hostname + '?u=' + response.id +)
         }
      });
 }
