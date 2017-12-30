@@ -292,7 +292,7 @@ function shorten_url(url){
         data: '{ longUrl: "' + url +'"}',
         success: function(response) {
            var myURL = window.location.hostname + '?u=' + googlTo(response.id)
-            $('#link').replaceWith("<p>" + "<a href='http://"+ window.location.hostname + '?u=' + response.id + "'>" + window.location.hostname + '?u=' + response.id + " </a></p>");
+            $('#link').replaceWith("<p>" + "<a href='http://"+ myURL + "'>" + myURL + " </a></p>");
 console.log("<p>" + "<a href='"+ myURL + "'>" + myURL + " </a></p>")
             console.log( myURL)
         }
