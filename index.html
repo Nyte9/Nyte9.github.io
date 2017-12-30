@@ -226,7 +226,7 @@ function load_song(){
          success: function(response) {
              console.log("this pages goo.gl: " + response.id)
 
-             $("#info").replaceWith("<p><input type = 'text' id='share' value='" + response.id + "/>'<p><a href='" + response.id + ".info' target='_blank'>Analytics</a></p>")
+             $("#info").replaceWith("<p><input type = 'text' id='share' value='" + response.id + "/' readonly><br><button onclick='copy_link'>Copy Link</button<p><a href='" + response.id + ".info' target='_blank'>Analytics</a></p>")
 
          }
       });
@@ -246,6 +246,29 @@ function shorten_url(url){
         }
      });
 }
+
+function copy_link(){
+  copyToClipboard('#share').val()
+}
+function copyToClipboard(text) {
+
+   var textArea = document.createElement( "textarea" );
+   textArea.value = text;
+   document.body.appendChild( textArea );
+
+   textArea.select();
+
+   try {
+      var successful = document.execCommand( 'copy' );
+      var msg = successful ? 'successful' : 'unsuccessful';
+      console.log('Copying text command was ' + msg);
+   } catch (err) {
+      console.log('Oops, unable to copy');
+   }
+
+   document.body.removeChild( textArea );
+}
+
 //output: Gold%20Coast
 
 console.log(GetURLParameter('n'));
