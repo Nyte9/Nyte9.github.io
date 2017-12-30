@@ -226,7 +226,7 @@ function load_song(){
          success: function(response) {
              console.log("this pages goo.gl: " + response.id)
 
-             $("#info").replaceWith("<p><input type = 'text' id='share' value='" + response.id + "/' readonly><br><button onclick='copy_link'>Copy Link</button<p><a href='" + response.id + ".info' target='_blank'>Analytics</a></p>")
+             $("#info").replaceWith("<p><input type = 'text' id='share' value='" + response.id + "/' readonly><br><button onclick='copy_link()'>Copy Link</button><p><a href='" + response.id + ".info' target='_blank'>Analytics</a></p>")
 
          }
       });
