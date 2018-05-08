@@ -1,0 +1,26 @@
+#table{
+  width:85%;
+
+  margin: 0px auto;
+}
+th{
+  width:30%;
+   vertical-align: top;
+}
+img{
+  max-width: 100%;
+  width:100%;
+}
+body{
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+#top{
+  text-align: center;
+  font-size: 40px;
+}
+#page{
+  width:85%;
+
+  margin: 0px auto;
+}

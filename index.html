@@ -1,338 +1,141 @@
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sophie Radeva</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111749334-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-111749334-1');
-</script>
-
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-4037943612302669",
-    enable_page_level_ads: true
-  });
-</script>
-<style>
-body{
-    background-color: #D4C284;
-    font-family: 'Montserrat', sans-serif;
-}
-#everything{
-
-  position: relative;
-}
-
-
-#name{
-  text-align: center;
-
-  font-size: 40;
-}
-audio {
-    background-color: #0B4354;
-    margin-left: -15px;
-
-}
-a{
-  color:#546E7A;
-}
-#link{
-  word-break: break-all;
-
-}
-
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
-
-.login-page {
-  width: 360px;
-  padding: 8% 0 0;
-  margin: auto;
-}
-.form {
-  position: relative;
-  z-index: 1;
-  background: #FFFFFF;
-  max-width: 360px;
-  margin: 0 auto 100px;
-  padding: 45px;
-  text-align: center;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-}
-.form input {
-  font-family: "Roboto", sans-serif;
-  outline: 0;
-  background: #f2f2f2;
-  width: 100%;
-  border: 0;
-  margin: 0 0 15px;
-  padding: 15px;
-  box-sizing: border-box;
-  font-size: 14px;
-}
-.form button {
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #4CAF50;
-  width: 100%;
-  border: 0;
-  padding: 15px;
-  color: #FFFFFF;
-  font-size: 14px;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
-  cursor: pointer;
-}
-.form button:hover,.form button:active,.form button:focus {
-  background: #43A047;
-}
-.form .message {
-  margin: 15px 0 0;
-  color: #b3b3b3;
-  font-size: 12px;
-}
-.form .message a {
-  color: #4CAF50;
-  text-decoration: none;
-}
-.form .register-form {
-  display: none;
-}
-.container {
-  position: relative;
-  z-index: 1;
-  max-width: 300px;
-  margin: 0 auto;
-}
-.container:before, .container:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-.container .info {
-  margin: 50px auto;
-  text-align: center;
-}
-.container .info h1 {
-  margin: 0 0 15px;
-  padding: 0;
-  font-size: 36px;
-  font-weight: 300;
-  color: #1a1a1a;
-}
-.container .info span {
-  color: #4d4d4d;
-  font-size: 12px;
-}
-.container .info span a {
-  color: #000000;
-  text-decoration: none;
-}
-.container .info span .fa {
-  color: #EF3B3A;
-}
-body {
-  background: #76b852; /* fallback for old browsers */
-  background: -webkit-linear-gradient(right, #76b852, #8DC26F);
-  background: -moz-linear-gradient(right, #76b852, #8DC26F);
-  background: -o-linear-gradient(right, #76b852, #8DC26F);
-  background: linear-gradient(to left, #76b852, #8DC26F);
-  font-family: "Roboto", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-</style>
 </head>
-<div id="everything">
-  <div id="container">
-    <div class="login-page">
-  <div class="form">
+<body>
 
-    <p style="margin-top:0px"><b>TUNATUNA</b></p>
-    <details>
-  <summary>How do I use this?</summary>
-    <hr>
-    Upload your song and get a direct link
-    <a href="https://mixtape.moe/" target="_blank">mixtape.moe</a>  <a href="https://doko.moe/" target="_blank">doko.moe</a>
-    <hr>
-    Paste the link in 'direct link' and fill out other details
-    <hr>
-    Click "CREATE PAGE".
-  </details>
+<div id="top" onclick="show_table()"><br>
+  SOPHIE RADEVA
   <br>
-    <div class="login-form">
-      <input type="text" id="f_link" placeholder="Direct link"/>
-      <details><summary>Extra's</summary><br>
-      <input type="text" id="f_name" placeholder="Song name"/>
-      <input type="text" id="f_artist" placeholder="Artist name"/>
-        <input type="text" id="f_desc" placeholder="Description"/>
-        <input type="text" id="f_sc" placeholder="Link (eg. your soundcloud)"/>
-      </details>
-      <br>
-      <button onclick="createpage()" >Create page</button>
-      <p id="link">link will appear here</p>
-
-      <p id="shortened"></p>
-
-    </div>
-  </div>
+</div>
+<br>
+<p style="display:inline" onclick="show_table()">HOME</p>  &ensp;   <p style="display:inline" onclick="show_about()" >ABOUT</p>
+<br><br>
+<div id="table">
+  <table class="tg">
+    <tr>
+      <th id="1" class="tg-yw4l"></th>
+      <th id="2" class="tg-yw4l"></th>
+      <th id="3" class="tg-yw4l"></th>
+    </tr>
+  </table>
 </div>
 
-  </div>
-</div>
+<div id="page" hidden></div>
+</body>
 
+<div id="about" hidden>
+<h2>ABOUT ME</h2>
+<p>Graphic Design Student at UWE</p>
+<a href='https://www.instagram.com/sophieradeva/'>INSTAGRAM</a>
+</div>
+</body>
 
 <script>
-function createpage(){
 
-  var name = encodeURIComponent($('#f_name').val())
-  var link = $('#f_link').val()
-  if(link.length > 5){
-    var artist = $('#f_artist').val()
-    var sc = $('#f_sc').val()
-    var desc = encodeURIComponent($('#f_desc').val())
-    var url = window.location.hostname + "?n=" + name + "&a=" + artist + "&s=" + link + "&l=" + sc + "&d=" + desc
-}
-//  $("#link").replaceWith("<p><a href='" + url + "'>" + url + "</a></p>")
-  shorten_url(url)
-
-
-}
-function GetURLParameter(sParam){
-    var sPageURL = window.location.search.substring(1);
-    var sURLVariables = sPageURL.split('&');
-    for (var i = 0; i < sURLVariables.length; i++)
-    {
-        var sParameterName = sURLVariables[i].split('=');
-        if (sParameterName[0] == sParam)
-        {
-            return sParameterName[1];
-        }
+function get_work(){
+  var table_count = 1;
+  for(var i = 40; i > -1; i=i-1){
+    var image_url = "work/" + i + "/img.jpg"
+    if(image_exists(image_url)){
+      $('#' + table_count).append("<img onclick='load(" + i + ")' src='work/" + i + "/img.jpg'></img>");
+      table_count++;
+      if(table_count > 3){
+        table_count = 1;
+      }
     }
-}
-
-function redirect_to(url){
-
-  window.location.replace(googlFrom(url))
-
-}
-var redirect = decodeURI(GetURLParameter('u'))
-
-if (redirect.length > 3 & redirect != 'undefined'){
-
-  redirect_to(redirect)
-}
-
-var name = decodeURIComponent(GetURLParameter('n')).replace(/\+/g, ' ');
-var desc = decodeURI(GetURLParameter('d')).replace(/\+/g, ' ');
-var song = decodeURI(GetURLParameter('s'))
-var artist = decodeURI(GetURLParameter('a'))
-var sc = decodeURI(GetURLParameter('l'))
-name = name.replace(/</g," ");
-name = name.replace(/>/g," ");
-desc = desc.replace(/</g," ");
-desc = desc.replace(/>/g," ");
-song = song.replace(/</g," ");
-song = song.replace(/>/g," ");
-artist = artist.replace(/</g," ");
-artist = artist.replace(/>/g," ");
-sc = sc.replace(/</g," ");
-sc = sc.replace(/>/g," ");
-console.log(song  + ' ' + song.length)
-
-if (song.length > 3 & song != 'undefined'){
-  console.log(song  + ' ' + song.length)
-
-  load_song()
-}
-
-function googlTo(long){
-  long = long.replace('https://goo.gl/','')
-  long = long.replace('.','')
-  long = long.replace('/','')
-  console.log("short: " + long)
-  return long
-}
-
-function googlFrom(short){
-  short = 'https://goo.gl/' + short
-
-  console.log("long: " + short)
-  return short
-}
-
-function load_song(){
-  if(sc == 'undefined'){
-    sc = ''
+    var image_url = "work/" + i + "/img.png"
+    if(image_exists(image_url)){
+      $('#' + table_count).append("<img onclick='load(" + i + ")' src='work/" + i + "/img.png'></img>");
+      table_count++;
+      if(table_count > 3){
+        table_count = 1;
+      }
+    }
   }
-  $("#everything").replaceWith( "    <div class='login-page'><div class='form'><div id='container'> <p id='name'> " + name + " </p><p id='artist'> " + artist + " </p><audio controls id='player'> <source src=" +
-  song + " type='audio/ogg'><source src=" + song +
-   " type='audio/mpeg'>Your browser does not support the audio element.</audio> <p id='desc'> " + desc + " </p><a href='" + sc + "' target='_blank' ><br> " + sc + " </a><div id='info'>info</div> </div>");
-   $.ajax({
-         url: 'https://www.googleapis.com/urlshortener/v1/url?key=AIzaSyCSpwlB4_F2KGPoss1INntqTLDykfprzo4',
-         type: 'POST',
-         contentType: 'application/json; charset=utf-8',
-         data: '{ longUrl: "' + window.location.href +'"}',
-         success: function(response) {
-             console.log("this pages goo.gl: " + response.id)
-             var myURL = window.location.hostname + '?u=' + googlTo(response.id)
-             $("#info").replaceWith("<p><input type = 'text' id='share' value='http://" + myURL + "' readonly><br><button id='copy' onclick='copy_link()'>Copy Link</button><p><a href='" + response.id + ".info' target='_blank'>Analytics</a></p>")
-
-         }
-      });
 
 }
 
-function shorten_url(url){
-  console.log("attempting to shorten " + url)
-  $.ajax({
-        url: 'https://www.googleapis.com/urlshortener/v1/url?key=AIzaSyCSpwlB4_F2KGPoss1INntqTLDykfprzo4',
-        type: 'POST',
-        contentType: 'application/json; charset=utf-8',
-        data: '{ longUrl: "' + url +'"}',
-        success: function(response) {
-           var myURL = window.location.hostname + '?u=' + googlTo(response.id)
-            $('#link').replaceWith("<p>" + "<a href='http://"+ myURL + "'>" + myURL + " </a></p>");
-console.log("<p>" + "<a href='"+ myURL + "'>" + myURL + " </a></p>")
-            console.log( myURL)
-        }
-     });
-}
 
-function copy_link(){
-  copyToClipboard($('#share').val())
+function image_exists(image_url){
+
+    var http = new XMLHttpRequest();
+
+    http.open('HEAD', image_url, false);
+    http.send();
+
+    return http.status != 404;
 
 }
-function copyToClipboard(text) {
 
-   var textArea = document.createElement( "textarea" );
-   textArea.value = text;
-   document.body.appendChild( textArea );
 
-   textArea.select();
 
-   try {
-      var successful = document.execCommand( 'copy' );
-      var msg = successful ? 'successful' : 'unsuccessful';
-      console.log('Copying text command was ' + msg);
-      $( '#copy' ).html( 'LINK COPIED' );
-   } catch (err) {
-     $( '#copy' ).text( 'ERROR' );
-      console.log('Oops, unable to copy');
-   }
-
-   document.body.removeChild( textArea );
+function load(id){
+  $("#table").fadeOut();
+  console.log("hi");
+    $("#page").html('');
+  $.get('work/'+id+'/title.txt', function(data) {
+    var title = data;
+    $("#page").append("<h2> " + title + "</h2><p style='text-align:left'>");
+    $.get('work/'+id+'/text.txt', function(data) {
+        $("#page").append(data + "</p><br>");
+        $.get('work/'+id+'/extra.txt', function(data) {
+          if(data.length > 4){
+            $("#page").append(data);
+          }
+        });
+        $("#page").append("<br><table id = 'pagetable'><tr><th id='p1'></th><th id='p2'></th><th id='p3'></th></tr></table>");
+        get_images(id);
+        $("#table").promise().done(function(){
+          $("#page").fadeIn();
+        });
+    });
+  });
 }
 
-//output: Gold%20Coast
+function get_images(id){
+  var image_string = "";
+  var table_count = 1;
+  for(var i = 40; i > -1; i=i-1){
+    var image_url = "work/" + id + "/images/" + i + ".jpg";
+    if(image_exists(image_url)){
+      $('#p' + table_count).append("<img src='" + image_url + "'></img>");
+      table_count++;
+      if(table_count > 3){
+        table_count = 1;
+      }
+    }
+    var image_url = "work/" + id + "/images/" + i + ".png";
+    if(image_exists(image_url)){
+      $('#p' + table_count).append("<img src='" + image_url + "'></img>");
+      table_count++;
+      if(table_count > 3){
+        table_count = 1;
+      }
+    }
+  }
 
-console.log(GetURLParameter('n'));
-//output: Gold Coast
+}
+
+function show_table(){
+  $("#about").fadeOut();
+  $("#page").fadeOut();
+  $("#page").promise().done(function(){
+    $('#table').fadeIn();
+  });
+}
+
+function show_about(){
+  $("#page").fadeOut();
+  $('#table').fadeOut();
+  $("#table").promise().done(function(){
+    $('#about').fadeIn();
+  });
+}
+///////////////////////////////////////////////
+
+get_work();
+
 </script>
